@@ -127,7 +127,22 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Animal.cpp" />
+    <ClCompile Include="Bird.cpp" />
+    <ClCompile Include="Enclosure.cpp" />
+    <ClCompile Include="EnclosureType.cpp" />
+    <ClCompile Include="Mammal.cpp" />
+    <ClCompile Include="Reptile.cpp" />
     <ClCompile Include="ZooProject.cpp" />
+    <ClCompile Include="ZooWorker.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Animal.h" />
+    <ClInclude Include="Bird.h" />
+    <ClInclude Include="Enclosure.h" />
+    <ClInclude Include="Mammal.h" />
+    <ClInclude Include="Reptile.h" />
+    <ClInclude Include="ZooWorker.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

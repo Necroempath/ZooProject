@@ -1,20 +1,29 @@
-// ZooProject.cpp : This file contains the 'main' function. Program execution begins and ends there.
-//
-
+#include "Animal.h"
+#include "Enclosure.cpp"
+#include "EnclosureType.cpp"
 #include <iostream>
+
+void PrintInfo(Animal animal)
+{
+    std::cout << "Name:\t" << animal.GetName() << "\n";
+    std::cout << "Age:\t" << animal.GetAge() << "\n";
+    std::cout << "Weight:\t" << animal.GetWeight() << "\n";
+}
 
 int main()
 {
-    std::cout << "Hello World!\n";
+	Animal animal1("aaa", 11, 8.5);
+	Animal animal2("cac", 6, 20);
+	Animal animal3("abb", 50, 4.7);
+	Enclosure enc;
+	enc.AddAnimal(animal1);
+	enc.AddAnimal(animal2);
+	enc.AddAnimal(animal3);
+	for (size_t i = 0; i < 3; i++)
+	{
+		std::cout<<enc.GetAnimals()[i].GetName()<<"\t"<< enc.GetAnimals()[i].GetAge() << "\t" << enc.GetAnimals()[i].GetWeight();
+
+	}
+   // PrintInfo(animal);
 }
 
-// Run program: Ctrl + F5 or Debug > Start Without Debugging menu
-// Debug program: F5 or Debug > Start Debugging menu
-
-// Tips for Getting Started: 
-//   1. Use the Solution Explorer window to add/manage files
-//   2. Use the Team Explorer window to connect to source control
-//   3. Use the Output window to see build output and other messages
-//   4. Use the Error List window to view errors
-//   5. Go to Project > Add New Item to create new code files, or Project > Add Existing Item to add existing code files to the project
-//   6. In the future, to open this project again, go to File > Open > Project and select the .sln file
