@@ -12,6 +12,44 @@ ZooWorker::ZooWorker(const char* name, const short experience)
 	_experience = experience > 0 ? experience : 0;
 }
 
+ZooWorker::ZooWorker(const ZooWorker& other)
+{
+	strncpy(_name, other._name, sizeof(_name));
+	_experience = other._experience;
+}
+
+ZooWorker::ZooWorker(ZooWorker&& other) noexcept
+{
+	strncpy(_name, other._name, sizeof(_name));
+	_experience = other._experience;
+
+	strncpy(other._name, "Unknown", sizeof(other._name));
+	other._experience = 0;
+}
+
+ZooWorker& ZooWorker::operator=(const ZooWorker& other)
+{
+	if (this == &other) return *this;
+
+	strncpy(_name, other._name, sizeof(_name));
+	_experience = other._experience;
+
+	return *this;
+}
+
+ZooWorker& ZooWorker::operator=(ZooWorker&& other) noexcept
+{
+	if (this == &other) return *this;
+
+	strncpy(_name, other._name, sizeof(_name));
+	_experience = other._experience;
+
+	strncpy(other._name, "Unknown", sizeof(other._name));
+	other._experience = 0;
+
+	return *this;
+}
+
 const char* ZooWorker::GetName() const { return _name; }
 
 const short ZooWorker::GetExp() const { return _experience; }

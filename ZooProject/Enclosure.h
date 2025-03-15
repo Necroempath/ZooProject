@@ -25,6 +25,14 @@ public:
 
 	explicit Enclosure(ZooWorker caretaker, EnclosureType type);
 
+	Enclosure(const Enclosure& other);
+
+	Enclosure(Enclosure&& other) noexcept;
+
+	Enclosure& operator=(const Enclosure& other);
+
+	Enclosure& operator=(Enclosure&& other) noexcept;
+
 	const ZooWorker GetWorker() const;
 
 	const EnclosureType GetType() const;
@@ -35,7 +43,7 @@ public:
 
 	void SetWorker(const ZooWorker& caretaker);
 
-	bool AddAnimal(Animal animal);
+	bool AddAnimal(const Animal& animal);
 
 	bool RemoveAnimal(short index);
 };

@@ -10,6 +10,14 @@ public:
 
 	explicit ZooWorker(const char* name, const short experience);
 
+	ZooWorker(const ZooWorker& other);
+
+	ZooWorker(ZooWorker&& other) noexcept;
+
+	ZooWorker& operator=(const ZooWorker& other);
+
+	ZooWorker& operator=(ZooWorker&& other) noexcept;
+
 	const char* GetName() const;
 
 	const short GetExp() const;

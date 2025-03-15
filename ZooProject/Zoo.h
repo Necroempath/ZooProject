@@ -1,13 +1,18 @@
 #pragma once
 #include "Enclosure.h"
-
+#define MAX_ENCLOSURES 5
 class Zoo
 {
-	Enclosure _enclosures[5];
+	Enclosure _enclosures[MAX_ENCLOSURES];
 	short _enclosureCount;
 
+public:
 	Zoo();
 
-	explicit Zoo(const Enclosure* enclosures, const short enclosureCount);
+	bool AddEnclosure(const Enclosure& enclosure);
+
+	bool RemoveEnclosure(const short index);
+
+	short GetCount() const;
 };
 
