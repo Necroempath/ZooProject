@@ -3,7 +3,15 @@
 #include "Animal.h"
 #define MAX_ANIMALS 10
 
-enum EnclosureType;
+enum EnclosureType
+{
+	SAVANNA,
+	TROPICS,
+	RAINFOREST,
+	DESERT,
+	WETLANDS,
+	UNKNOWN
+};
 
 class Enclosure
 {
