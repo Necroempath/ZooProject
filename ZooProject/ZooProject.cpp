@@ -1,6 +1,5 @@
 #include "Animal.h"
-#include "Enclosure.cpp"
-#include "EnclosureType.cpp"
+#include "Enclosure.h"
 #include <iostream>
 
 void PrintInfo(Animal animal)

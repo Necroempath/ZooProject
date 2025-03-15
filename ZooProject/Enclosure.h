@@ -1,8 +1,9 @@
 #pragma once
 #include "ZooWorker.h"
 #include "Animal.h"
-#include "EnclosureType.cpp"
 #define MAX_ANIMALS 10
+
+enum EnclosureType;
 
 class Enclosure
 {

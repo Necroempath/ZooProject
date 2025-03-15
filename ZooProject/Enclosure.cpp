@@ -1,5 +1,15 @@
 #include "Enclosure.h"
 
+enum EnclosureType
+{
+	SAVANNA,
+	TROPICS,
+	RAINFOREST,
+	DESERT,
+	WETLANDS,
+	UNKNOWN
+};
+
 Enclosure::Enclosure() : _caretaker(ZooWorker()), _type(UNKNOWN), _animalCount(0), _animals() {};
 
 Enclosure::Enclosure(ZooWorker caretaker, EnclosureType type) : _caretaker(caretaker), _type(type), _animalCount(0), _animals() {};

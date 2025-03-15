@@ -130,7 +130,6 @@
     <ClCompile Include="Animal.cpp" />
     <ClCompile Include="Bird.cpp" />
     <ClCompile Include="Enclosure.cpp" />
-    <ClCompile Include="EnclosureType.cpp" />
     <ClCompile Include="Mammal.cpp" />
     <ClCompile Include="Reptile.cpp" />
     <ClCompile Include="ZooProject.cpp" />

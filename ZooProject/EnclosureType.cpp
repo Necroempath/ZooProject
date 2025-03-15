@@ -1,9 +1,0 @@
-enum EnclosureType
-{
-	SAVANNA,
-	TROPICS,
-	RAINFOREST,
-	DESERT,
-	WETLANDS,
-	UNKNOWN
-};
