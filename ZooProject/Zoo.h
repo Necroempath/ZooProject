@@ -6,7 +6,7 @@ class Zoo
 	Enclosure _enclosures[5];
 	short _enclosureCount;
 
-	Enclosure();
+	Zoo();
 
 	explicit Zoo(const Enclosure* enclosures, const short enclosureCount);
 };
