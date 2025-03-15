@@ -132,6 +132,7 @@
     <ClCompile Include="Enclosure.cpp" />
     <ClCompile Include="Mammal.cpp" />
     <ClCompile Include="Reptile.cpp" />
+    <ClCompile Include="Zoo.cpp" />
     <ClCompile Include="ZooProject.cpp" />
     <ClCompile Include="ZooWorker.cpp" />
   </ItemGroup>
@@ -141,6 +142,7 @@
     <ClInclude Include="Enclosure.h" />
     <ClInclude Include="Mammal.h" />
     <ClInclude Include="Reptile.h" />
+    <ClInclude Include="Zoo.h" />
     <ClInclude Include="ZooWorker.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
