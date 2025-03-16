@@ -26,6 +26,10 @@ Animal::Animal(Animal&& other) noexcept
 	strncpy(_name, other._name, sizeof(_name));
 	_age = other._age;
 	_weight = other._weight;
+
+	strncpy(other._name, "Unknown", sizeof(other._name));
+	other._age = 0;
+	other._weight = 0;
 }
 
 Animal& Animal::operator=(const Animal& other)

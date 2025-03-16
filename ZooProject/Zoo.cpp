@@ -27,6 +27,11 @@ bool Zoo::RemoveEnclosure(const short index)
 	return 1;
 }
 
+const Enclosure* Zoo::GetEnclosures() const
+{
+	return _enclosures;
+}
+
 short Zoo::GetCount() const
 {
 	return _enclosureCount;

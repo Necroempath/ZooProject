@@ -1,7 +1,7 @@
 #pragma once
 #include "Animal.h"
 
-class Bird : Animal
+class Bird : public Animal
 {
 	float _wingSwang;
 

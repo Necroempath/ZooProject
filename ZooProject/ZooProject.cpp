@@ -2,6 +2,9 @@
 #include "Enclosure.h"
 #include <iostream>
 #include "Zoo.h"
+#include "Bird.h"
+#include "Reptile.h"
+#include "Mammal.h"
 
 const char* GetEnclsureType(const EnclosureType type)
 {
@@ -28,64 +31,51 @@ const char* GetEnclsureType(const EnclosureType type)
 	}
 }
 
-void PrintInfo(const Animal& animal)
+void PrinAnimaltInfo(const Animal& animal)
 {
-    std::cout << "Name:\t" << animal.GetName() << "\n";
-    std::cout << "Age:\t" << animal.GetAge() << "\n";
-    std::cout << "Weight:\t" << animal.GetWeight() << "\n";
+    std::cout << "\n\tName:\t" << animal.GetName() << "\n";
+    std::cout << "\tAge:\t" << animal.GetAge() << "\n";
+    std::cout << "\tWeight:\t" << animal.GetWeight() << "\n";
 }
 
 void PrintEnclosureInfo(const Enclosure& enclosure)
 {
-	std::cout << "Enclosure type:\t\t" << GetEnclsureType(enclosure.GetType()) << "\n";
-	std::cout << "Animal count:\t\t" << enclosure.GetAnimalsCount() << "\n";
-	std::cout << "Caretaker:\t\t" << enclosure.GetWorker().GetName() << "\n";
+	std::cout << "\nEnclosure type:\t\t" << GetEnclsureType(enclosure.GetType()) << "\n";
+	std::cout << "\nAnimal count:\t\t" << enclosure.GetAnimalsCount() << "\n";
+	for (short i = 0; i < enclosure.GetAnimalsCount(); i++)
+	{
+		PrinAnimaltInfo(enclosure.GetAnimals()[i]);
+	} 
+	std::cout << "\nCaretaker:\t\t" << enclosure.GetWorker().GetName() << "\n";
 }
 
 void PrintZooInfo(const Zoo& zoo)
 {
-	for (size_t i = 0; i < zoo.GetCount(); i++)
+	for (short i = 0; i < zoo.GetCount(); i++)
 	{
 		std::cout << "\n-----------ENCLOSURE " << i + 1 << "-----------\n";
-		PrintEnclosureInfo(zoo[i]);
+		PrintEnclosureInfo(zoo.GetEnclosures()[i]);
 
 	}
 }
 
 int main()
 {
-	Animal cat("Sweety", 4, 12.5);
-	Animal rat("Tricky", 3, 5);
-	/*Bird raven()*/
-	Animal animal1("aaa", 11, 8.5);
-	Animal animal2("cac", 6, 20);
-	Animal animal3("abb", 50, 4.7);
+	Mammal cat("Sweety", 4, 12.5, true);
+	Mammal rat("Tricky", 3, 5, false);
+	Bird raven("Spector", 35, 2, 2.5);
+	Reptile python("Fear", 20, 20, true);
+
 	ZooWorker worker("Abdull", 21);
 	Enclosure enc(worker, TROPICS);
+	enc.AddAnimal(cat);
+	enc.AddAnimal(rat);
+	enc.AddAnimal(raven);
+	enc.AddAnimal(python);
 	Zoo zoo;
-	zoo.AddEnclosure(enc);
-	
-	//PrintEnclosureInfo(enc);
-	enc.AddAnimal(animal1);
-	enc.AddAnimal(animal2);
-	enc.AddAnimal(animal3);
+	enc.RemoveAnimal(1);
 	zoo.AddEnclosure(enc);
 	PrintZooInfo(zoo);
-	//for (size_t i = 0; i < 3; i++)
-	//{
-	//	std::cout<<enc.GetAnimals()[i].GetName()<<"\t"<< enc.GetAnimals()[i].GetAge() << "\t" << enc.GetAnimals()[i].GetWeight();
-
-	//}
-	//enc.RemoveAnimal(0);
-	//enc.RemoveAnimal(0);
-	//enc.AddAnimal(animal1);
-	//enc.AddAnimal(animal1);
-	//enc.AddAnimal(animal1);
-	//enc.RemoveAnimal(3);
-	//for (size_t i = 0; i < enc.GetAnimalsCount(); i++)
-	//{
-	//	std::cout<<enc.GetAnimals()[i].GetName() << "\n";
-	//}
 
 }
 
